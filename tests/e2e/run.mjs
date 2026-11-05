@@ -26,7 +26,7 @@ async function section(name, fn) {
 
 const server = await startServer();
 const ORIGIN = `http://127.0.0.1:${server.address().port}`;
-const BASE = `${ORIGIN}/monthly-budget/`;
+const BASE = `${ORIGIN}/budget-app/`;
 const browser = await chromium.launch();
 const phone = devices['iPhone 13'];
 
@@ -271,7 +271,7 @@ await section('Offline use', async () => {
   await page.reload();
   await page.waitForFunction(() => !!navigator.serviceWorker.controller);
   const scope = await page.evaluate(async () => (await navigator.serviceWorker.getRegistration()).scope);
-  check(scope.endsWith('/monthly-budget/'), `service worker scope limited to app folder (${scope})`);
+  check(scope.endsWith('/budget-app/'), `service worker scope limited to app folder (${scope})`);
   await ctx.setOffline(true);
   await page.reload();
   await page.waitForSelector('#view .card');
@@ -317,7 +317,7 @@ await section('Does not touch the other app on the same origin', async () => {
   check(r.other === 'keep-me', 'other app IndexedDB data intact');
   check(r.ls === 'keep-me', 'other app localStorage intact');
   check(r.cached === 'keep-me', 'other app cache intact');
-  check(r.regs.some((s) => s.endsWith('/expense-tracker/')) && r.regs.some((s) => s.endsWith('/monthly-budget/')), 'both service workers registered with separate scopes');
+  check(r.regs.some((s) => s.endsWith('/expense-tracker/')) && r.regs.some((s) => s.endsWith('/budget-app/')), 'both service workers registered with separate scopes');
   check(r.dbs.includes('mbapp-monthly-budget-aed'), 'this app uses its own uniquely named database');
   check(r.cacheNames.filter((c) => !c.startsWith('mbapp-monthly-budget-aed-')).every((c) => c === 'expense-cache-v1'), 'this app only created caches with its prefix');
   check(r.lsKeys.filter((k) => k !== 'expense.settings').every((k) => k.startsWith('mbapp.monthly-budget-aed.')), 'this app only used prefixed localStorage keys');

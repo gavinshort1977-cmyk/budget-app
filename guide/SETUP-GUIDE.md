@@ -2,7 +2,7 @@
 
 This guide is for people who don't write code. Do the parts in order. Part 1 is all the app needs to work. Parts 2 and 3 are only needed for Google Drive sync between devices.
 
-- **Part 1:** Put the app online for free with GitHub Pages (about 10 minutes)
+- **Part 1:** Put the app online for free with GitHub Pages (about 5 minutes)
 - **Part 2:** Create a Google client ID for your wife's Gmail sync (about 15 minutes)
 - **Part 3:** Install the app on her phone, tablet and computer
 - **Part 4:** Day-to-day tips, backups and troubleshooting
@@ -15,33 +15,20 @@ This guide is for people who don't write code. Do the parts in order. Part 1 is 
 
 The app will live at:
 
-**`https://gavinshort1977-cmyk.github.io/monthly-budget/`**
+**`https://gavinshort1977-cmyk.github.io/budget-app/`**
 
 Your expense tracker stays at `https://gavinshort1977-cmyk.github.io/expense-tracker/`. The two apps share a web address, but each one keeps its storage separate.
 
-### 1.1 Create the repository
+The app's files are already in your **`budget-app`** repository on GitHub. All you need to do is switch on GitHub Pages:
 
-1. Go to <https://github.com> and sign in as **gavinshort1977-cmyk**.
-2. Click the **+** at the top right, then **New repository**.
-3. Set **Repository name** to `monthly-budget`. Use exactly this name, because it becomes part of the web address.
-4. Choose **Public**. Free GitHub Pages needs a public repository. This is safe because the repository holds only code, never budget data.
-5. Leave the other boxes unticked and click **Create repository**.
+1. Go to <https://github.com/gavinshort1977-cmyk/budget-app> and sign in.
+2. Click **Settings**, then click **Pages** in the left menu.
+3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+4. Under **Branch**, choose **main**, then **/docs** (not `/root`), and click **Save**.
+5. Wait 1–3 minutes, then refresh the page. A box appears that says *"Your site is live at …"*.
+6. Open `https://gavinshort1977-cmyk.github.io/budget-app/`. The budget should appear.
 
-### 1.2 Upload the files
-
-1. Unzip `monthly-budget.zip` on your computer. You get a folder named `monthly-budget` that contains the `docs`, `guide`, `tests` and `scripts` folders, plus some files.
-2. On the new repository page, click **uploading an existing file**. If you don't see that link, click **Add file**, then **Upload files**.
-3. Open the unzipped `monthly-budget` folder. Select **everything inside it** (the folders and the files) and drag it all into the browser window. Chrome, Edge and Firefox keep the folder structure when you drag folders in.
-4. Wait for the upload to finish. In the list, you should see `docs/index.html` and `docs/js/app.js`, not just `index.html`.
-5. Click **Commit changes**.
-
-### 1.3 Turn on GitHub Pages
-
-1. In the repository, click **Settings**, then click **Pages** in the left menu.
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Under **Branch**, choose **main**, then **/docs** (not `/root`), and click **Save**.
-4. Wait 1–3 minutes, then refresh the page. A box appears that says *"Your site is live at …"*.
-5. Open `https://gavinshort1977-cmyk.github.io/monthly-budget/`. The budget should appear.
+> Free GitHub Pages needs the repository to be **Public**. If Pages asks you to upgrade, go to **Settings**, then **General**, then **Danger Zone**, then **Change visibility**, and choose **Public**. This is safe because the repository holds only code, never budget figures.
 
 At this point the app fully works on one device, without sync. Settings shows *"Sync is off"*. That's expected until you finish Part 2.
 
@@ -91,7 +78,7 @@ You can do all of this signed in as **you**. The Google Cloud project doesn't ne
 
 ### 2.2 Put the client ID into the app
 
-1. On GitHub, open your `monthly-budget` repository. Go to the `docs` folder, then `js`, then open `config.js`.
+1. On GitHub, open your `budget-app` repository. Go to the `docs` folder, then `js`, then open `config.js`.
 2. Click the **pencil** icon (Edit this file).
 3. Find this line:
    ```js
@@ -111,7 +98,7 @@ You can do all of this signed in as **you**. The Google Cloud project doesn't ne
 Do the following on each device. **Install the app first, then sign in from inside the installed app.** The installed app keeps its own storage, separate from the browser.
 
 ### Android (Chrome)
-1. Open `https://gavinshort1977-cmyk.github.io/monthly-budget/` in **Chrome**.
+1. Open `https://gavinshort1977-cmyk.github.io/budget-app/` in **Chrome**.
 2. Tap the **⋮** menu, then **Install app**. On some phones this is called **Add to Home screen**, then **Install**.
 3. Open **Budget** from the home screen.
 

@@ -33,7 +33,7 @@ npm run e2e
 npm run serve
 ```
 
-`npm test` runs the unit tests, and `npm run e2e` runs the browser tests. `npm run serve` serves the app locally at http://127.0.0.1:8080/monthly-budget/.
+`npm test` runs the unit tests, and `npm run e2e` runs the browser tests. `npm run serve` serves the app locally at http://127.0.0.1:8080/budget-app/.
 
 All test data is invented. Screenshots from the browser tests are saved to `test-output/`, which git ignores.
 
