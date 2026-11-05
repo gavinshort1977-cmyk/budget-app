@@ -1,0 +1,13 @@
+{
+  "name": "monthly-budget",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline-first personal monthly budget PWA (AED) with optional Google Drive sync.",
+  "scripts": {
+    "test": "node --test tests/unit/*.test.mjs",
+    "e2e": "node tests/e2e/run.mjs",
+    "serve": "node tests/e2e/server.mjs",
+    "icons": "node scripts/make-icons.mjs"
+  }
+}

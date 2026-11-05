@@ -1,0 +1,17 @@
+{
+  "id": "./?app=monthly-budget-aed",
+  "name": "Monthly Budget (AED)",
+  "short_name": "Budget",
+  "description": "Personal 12-month budget in AED. Works offline.",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f7f9",
+  "theme_color": "#1d5fa8",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><title>Other app</title>
+<p>Stand-in for another app on the same origin.</p>
+<script>
+  localStorage.setItem('expense.settings', 'keep-me');
+  const r = indexedDB.open('expense-tracker-db', 1);
+  r.onupgradeneeded = () => r.result.createObjectStore('items');
+  r.onsuccess = () => { const tx = r.result.transaction('items', 'readwrite'); tx.objectStore('items').put('keep-me', 'k'); tx.oncomplete = () => { window.idbDone = true; }; };
+  caches.open('expense-cache-v1').then((c) => c.put('/expense-tracker/x', new Response('keep-me')));
+  navigator.serviceWorker.register('./sw.js', { scope: './' }).then(() => { window.swDone = true; });
+</script>
